@@ -60,9 +60,7 @@
               <h2 class="black-text no-margin-t">{{ article.title | escape }}</h2>
               <p class="black-text">{{ article.excerpt }}</p>
               <div class="line bright-blue-blog featured"></div>
-              <p class="black-text smaller">
-                <a href="{{ article.url }}" class="blog-link">READ MORE</a>
-              </p>
+                <a href="{{ article.url }}" class="blog-link black-text smaller">READ MORE</a>
             </div>
             <div class="blog-featured-img-wrapper" {% if article.image %}style="background-image: url({{ article.image | img_url: '800x' }});"{% endif %}></div>
           </div>
@@ -79,7 +77,7 @@
 
 
           <div class="blog-individual">
-            <a href="{{ article.url }}" class="article-img-link">
+            <a href="{{ article.url }}"  aria-label="Read {{ article.title | escape }}">
               <div class="blog-individual-img-wrapper" {% if article.image %}style="background-image: url({{ article.image | img_url: '800x' }});"{% endif %}></div>
             </a>
             <div class="blog-individual-text-wrapper">
@@ -92,9 +90,7 @@
                 <p class="black-text">{{ article.excerpt }}</p>
               {% endif %}
               <div class="line bright-blue-blog"></div>
-              <p class="black-text smaller">
-                <a href="{{ article.url }}" class="blog-link">READ MORE</a>
-              </p>
+                <a href="{{ article.url }}" class="blog-link black-text smaller">READ MORE<span class="sr-only"> about {{ article.title }}</a>
             
             </div>
 

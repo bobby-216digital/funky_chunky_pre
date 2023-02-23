@@ -9,9 +9,9 @@
         <div class="nutrition-img-wrapper">
             
             {%if section.settings.product_img_1 %}
-                <img src="{{section.settings.product_img_1 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_1 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_1.alt }}">
             {%else%}
-                <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/CP-top-min.jpg" loading="lazy" class="img-nutrition-product">
+                <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/CP-top-min.jpg" loading="lazy" class="img-nutrition-product" alt="Chocolate Pretzel">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -39,7 +39,7 @@
                 <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts.jpg" loading="lazy" alt="">
                 {%endcomment%}
                 {%if section.settings.nutrition_img_1 %}
-                    <img src="{{section.settings.nutrition_img_1 | img_url: 'large' }}" loading="lazy" alt="">
+                    <img src="{{section.settings.nutrition_img_1 | img_url: 'large' }}" loading="lazy" alt="{{ nutrition_img_1.alt | escape }}">
                 {%endif%}
                 </div>
               <div class="nutrition-col">
@@ -52,7 +52,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_2 %}
-                <img src="{{section.settings.product_img_2 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_2 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_2.alt | escape }}">
             {%else%}  
                 <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/SSC-top-min.jpg" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/SSC-top-min-p-500.jpg 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/SSC-top-min-p-800.jpg 800w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/SSC-top-min.jpg 1400w" sizes="(max-width: 991px) 250px, 28vw" alt="Sea Salt Caramel product, popcorn with chocolate and caramel drizzle visible" class="img-nutrition-product"></div>
             {%endif%}
@@ -75,7 +75,7 @@
             <div   class=" nutrition-information-extend hide">
               <div class="nutrition-col">
                 {%if section.settings.nutrition_img_2 %}
-                    <img src="{{section.settings.nutrition_img_2 | img_url: 'large' }}" loading="lazy" alt="">
+                    <img src="{{section.settings.nutrition_img_2 | img_url: 'large' }}" loading="lazy" alt="{{ nutrition_img_2.alt | escape }}">
                 {%else%}
                     <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts.jpg" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts-p-500.jpg 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts.jpg 600w" sizes="100vw" alt="">
                 {%endif%}
@@ -90,7 +90,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_3 %}
-                <img src="{{section.settings.product_img_3 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_3 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_3.alt | escape }}">
             {%else%}  
                 <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/PBC-top-min.jpg" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/PBC-top-min-p-500.jpg 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/PBC-top-min-p-800.jpg 800w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/PBC-top-min-p-1080.jpg 1080w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/PBC-top-min.jpg 1400w" sizes="(max-width: 991px) 250px, 28vw" alt="Peanut Butter Cup product, with popcorn, mini chocolate peanut butter cups, chocolate drizzle, and peanuts visible" class="img-nutrition-product">
                 
@@ -115,7 +115,7 @@
             <div   class=" nutrition-information-extend hide">
               <div class="nutrition-col">
                 {%if section.settings.nutrition_img_3 %}
-                    <img src="{{section.settings.nutrition_img_3 | img_url: 'large' }}" loading="lazy" alt="">
+                    <img src="{{section.settings.nutrition_img_3 | img_url: 'large' }}" loading="lazy" alt="{{ nutrition_img_3.alt | escape }}">
                 {%else%}
                     <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts.jpg" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts-p-500.jpg 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/nutrition-facts.jpg 600w" sizes="100vw" alt="">
                 {%endif%}
@@ -210,7 +210,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_6 %}
-                <img src="{{section.settings.product_img_6 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_6 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product._img_6.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -244,7 +244,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_7 %}
-                <img src="{{section.settings.product_img_7 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_7 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product._img_7.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -278,7 +278,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_8 %}
-                <img src="{{section.settings.product_img_8 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_8 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_8.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -312,7 +312,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_9 %}
-                <img src="{{section.settings.product_img_9 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_9 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_9_img.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -346,7 +346,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_10 %}
-                <img src="{{section.settings.product_img_10 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_10 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_10.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -380,7 +380,7 @@
       <div class="nutrition-flex-row">
         <div class="nutrition-img-wrapper">
             {%if section.settings.product_img_11 %}
-                <img src="{{section.settings.product_img_11 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product">
+                <img src="{{section.settings.product_img_11 | img_url: 'large' }}" loading="lazy" class="img-nutrition-product" alt="{{ product_img_11.alt | escape }}">
             {%endif%}
         </div>
         <div class="nutrition-fact-text">
@@ -402,7 +402,7 @@
             <div   class=" nutrition-information-extend hide">
               <div class="nutrition-col">
                 {%if section.settings.nutrition_img_11 %}
-                    <img src="{{section.settings.nutrition_img_11 | img_url: 'large' }}" loading="lazy" alt="">
+                    <img src="{{section.settings.nutrition_img_11 | img_url: 'large' }}" loading="lazy" alt="{{ nutrition_img_11.alt | escape }}">
                 {%endif%}
                 </div>
               <div class="nutrition-col">

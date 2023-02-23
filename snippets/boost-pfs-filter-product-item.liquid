@@ -326,7 +326,7 @@
 {% endfor %}
 {%- endcapture -%}
 
-<div class="boost-pfs-filter-product-item boost-pfs-filter-product-item-{{- product_item_type -}}
+<a href="{{- product_url -}}" style="text-decoration: none;" class="boost-pfs-filter-product-item boost-pfs-filter-product-item-{{- product_item_type -}}
           {{- active_image_swap_class -}}
           {{- grid_width_class_desktop -}}
           {{- grid_width_class_mobile -}}
@@ -334,8 +334,8 @@
           {{- sale_class -}}"  {{ data_image_width_height }}>
 	<div class="boost-pfs-filter-product-item-inner">
     <div class="boost-pfs-filter-product-item-image" data-boost-image-loading-animation>
-		<a href="{{- product_url -}}" class="boost-pfs-filter-product-item-image-link lazyload boost-pfs-filter-crop-image-position-{{- product_img_crop -}}"
-		style="padding-top: {{- padding_top -}}%;">
+		<div class="boost-pfs-filter-product-item-image-link lazyload boost-pfs-filter-crop-image-position-{{- product_img_crop -}}"
+		style="padding-top: 0px;">
 			<img class="boost-pfs-filter-product-item-main-image lazyload Image--lazyLoad"
 			data-src="{{- preview_image | img_url: image_size -}}"
 			data-srcset="{{- data_src_set -}}"
@@ -344,7 +344,7 @@
 			data-sizes="auto"
 			alt="{{- product.title | escape -}}"
 			{{ data_img_flip }} />
-		</a>
+		</div>
 		{%- if show_label == true -%}
 		<div class="boost-pfs-filter-product-item-label">
 			{{- sold_out_label -}}
@@ -355,7 +355,7 @@
     </div>
 		<div class="boost-pfs-filter-product-bottom">
 			<div class="boost-pfs-filter-product-bottom-inner">
-				<a href="{{- product_url -}}#" class="boost-pfs-filter-product-item-title">{{- product.title -}}</a>
+				<div class="boost-pfs-filter-product-item-title">{{- product.title -}}</div>
 				{{- product_vendor -}}
 				{{- product_review -}}
 				{{- product_price -}}

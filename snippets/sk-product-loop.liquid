@@ -77,7 +77,7 @@
           {% assign cart_disabled = 'disabled="disabled"' %}
       {% endif %}
       <input type="number" class="form-quantity-input-product w-input" maxlength="256" name="quantity" value="1" min="1" pattern="[0-9]*" id="Quantity" required="" style="display: none;">
-      <select name="id" class="jc-product-input-hide" style="display: none;">
+      <select aria-label="Select Variant" name="id" class="jc-product-input-hide" style="display: none;">
         {% for variant in product.variants %}
           <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}  value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
         {% endfor %}

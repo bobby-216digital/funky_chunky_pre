@@ -32,7 +32,7 @@
 
 
     </div>
-    <div data-w-id="bd6904fa-cd64-30df-f4d8-288fa08ac693" class="close-block">
+    <div data-w-id="bd6904fa-cd64-30df-f4d8-288fa08ac693" class="close-block" role="button" tabindex="0" onkeydown="keyToClick(event);">
       <div class="close-icon-wrapper"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/close-w.svg?v=1660925299" loading="lazy" alt="" class="close-newsletter img-absolute"></div>
       <p class="no-margin-b italic-text smaller-text">Close to Shop</p>
     </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="newsletter-close-btn"><img src="//cdn.shopify.com/s/files/1/0636/9355/3922/files/close_2close.png" loading="lazy" alt="Close" class="newsletter-close-btn-img"></div>
+    <div class="newsletter-close-btn"><img tabindex="0" role="button" src="//cdn.shopify.com/s/files/1/0636/9355/3922/files/close_2close.png" loading="lazy" alt="Close Modal" class="newsletter-close-btn-img"></div>
   </div>
 </div>
 {% endcomment %}
@@ -106,6 +106,10 @@
             $.cookie('sk_newsletter_funky_chunky', true, {
               expires: date
             });
+            setTimeout(() => {
+              trapFocus('.sign-up-and-save-wrapper');
+            }, 600)
+            
           }, 70);
           
         }

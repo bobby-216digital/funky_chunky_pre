@@ -2,14 +2,14 @@
   {% unless paginate.previous.is_link %}
   
       <a href="{{ paginate.previous.url }}" class="jc-paginate-btn">
-        <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/chevron-left-solid.svg?v=1661467672" class="paginate-img">
+        <img alt="Previous Arrow" src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/chevron-left-solid.svg?v=1661467672" class="paginate-img">
      
       </a>
     
     {% else %}
  
       <a href="{{ paginate.previous.url }}" class="jc-paginate-btn">
-        <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/chevron-left-solid.svg?v=1661467672" class="paginate-img">
+        <img alt="Previous Arrow" src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/chevron-left-solid.svg?v=1661467672" class="paginate-img">
       
       </a>
     
@@ -20,7 +20,7 @@
   {% unless paginate.next.is_link %}
    
      <a href="{{ paginate.next.url }}" class="jc-paginate-btn">
-      <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/angle-right-solid.svg?v=1661467672" class="paginate-img">
+      <img alt="Next Arrow" src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/angle-right-solid.svg?v=1661467672" class="paginate-img">
       
       {%comment%}
       <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/arrow-right-w.svg" class="paginate-img">
@@ -30,7 +30,7 @@
   {% else %}
     
       <a href="{{ paginate.next.url }}" class="jc-paginate-btn">
-        <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/angle-right-solid.svg?v=1661467672" class="paginate-img">
+        <img alt="Next Arrow" src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/angle-right-solid.svg?v=1661467672" class="paginate-img">
         {%comment%}
         <img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/arrow-left-w.svg" class="paginate-img">
         {%endcomment%}

@@ -137,7 +137,7 @@
       {% comment %}{% endcomment %}
       <div class="breadcrumb-content-block-product">
         <a href="/collections/all" class="breadcrumb-link-product w-inline-block">
-          <p class="black-text no-margin-b">Shop All</p>
+          <p class="black-text no-margin-b">Shop All<span class="sr-only"> products</span></p>
         </a>
       </div>
       
@@ -194,11 +194,11 @@
         <div id="w-node-_6a73b9fe-d9ad-0820-98ea-b7508ab58fff-6b9b657d" class="col-75">
 
 
-          <div data-current="Tab 1" id="jc-show-slider-{{variant.id}} data-easing="ease" data-duration-in="300" data-duration-out="100" class="single-product-img-tabs w-tabs">
+          <div data-current="Tab 1" id="jc-show-slider-{{variant.id}}" data-easing="ease" data-duration-in="300" data-duration-out="100" class="single-product-img-tabs w-tabs">
             <div class="tabs-menu-2 w-tab-menu">
               {% for image in product.images %}
                 
-                <a data-w-tab="Tab {{ forloop.index }}" class="tab-link-product w-inline-block single-product-thumbnail-img
+                <a aria-hidden="true" tabindex="-1" data-w-tab="Tab {{ forloop.index }}" class="tab-link-product w-inline-block single-product-thumbnail-img
                 {%comment%}
                 Chip zel pop Id: 1537893433401
                 Nutty Choco pop Id: 1537801388089
@@ -223,7 +223,7 @@
                 {%endcomment%}
                  
                  w-tab-link {% if forloop.first == true %}w--current{% endif %}"  jc-variant-id="{{ image | img_url: '800x' }}">
-                 <div class="tab-link-img-wrapper-product"><img src="{{ image | img_url: '800x' }}" loading="lazy" alt="{{product.title}}" class="tab-link-img-product"></div>
+                 <div class="tab-link-img-wrapper-product"><img src="{{ image | img_url: '800x' }}" loading="lazy" alt="" class="tab-link-img-product"></div>
                 </a>
             
               {% endfor %}
@@ -234,7 +234,7 @@
               <div data-w-tab="Tab {{ forloop.index }}" class="tab-content-wrapper w-tab-pane {% if forloop.first == true %}w--tab-active{% endif %}">
                 <div class="tab-inner-product">
                 <div class="tab-img-wrapper-product">
-                  <div class="main-product-img-wrapper"><img src="{{ image | img_url: '1500x' }}" loading="eager" alt="{{image.alt}}" class="tab-img-product"></div>
+                  <div class="main-product-img-wrapper"><img src="{{ image | img_url: '1500x' }}" loading="eager" alt="" class="tab-img-product"></div>
                 </div>
                 </div>
               </div>
@@ -359,7 +359,7 @@
                           <p class="black-text no-margin-b">{{ product_option.name }}:</p>
                           <div class="">
 
-                             <select id="select-{{forloop.index}}" class="form-text-field color w-dropdown product-page-select form-select-product size-dropdown">
+                             <select aria-label="Variants" id="select-{{forloop.index}}" class="form-text-field color w-dropdown product-page-select form-select-product size-dropdown">
                                {% for value in product_option.values %}
                                <option class="variant-option" jc-option-id="{{option.id}}" {% if product_option.selected_value == value %}selected{% endif %}>{{value}}</option>
                                {% endfor %}
@@ -438,11 +438,11 @@
                     <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
                       <div class="jc-product-quantity-wrapper">
                         <a id="jc-quantity-btn-down" href="#" class="jc-quantity-btn">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="Decrease Quantity" class="qty-btn-img"></div>
                         </a>
-                        <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector">
+                        <input aria-label="Quantity" type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector">
                         <a id="jc-quantity-btn-up" href="#" class="jc-quantity-btn">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="Increase Quantity" class="qty-btn-img"></div>
                     
                         </a>
                       </div>
@@ -693,7 +693,7 @@
                 <div class="nutrition-img-wrapper">
                   <p>{{ product.metafields.product_info.nutritional_facts_tab }}</p>
                   {% if product.metafields.product_info.nutrition_facts_image %}
-                  <img class="nutrition-facts-image" src="{{ product.metafields.product_info.nutrition_facts_image | file_url }}">
+                  <img class="nutrition-facts-image" src="{{ product.metafields.product_info.nutrition_facts_image | file_url }}" alt="Nutrition Facts">
                   {% endif %}
                 </div>
               </div>

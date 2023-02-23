@@ -329,7 +329,7 @@
 
                     {% form "product", product %}
 
-                    <select name="id" class="jc-product-input-hide" style="display: none;">
+                    <select aria-label="Select Variant" name="id" class="jc-product-input-hide" style="display: none;">
                       {% for variant in product.variants %}
                       {% assign variant_id = variant.id %}
                         <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}  value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
@@ -340,13 +340,13 @@
                       <div class="jc-product-quantity-wrapper">
 
                         <a id="jc-quantity-btn-down--{{variant_id}}" href="#" class="jc-quantity-btn qty-btn-product-down">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="Decrease Quantity" class="qty-btn-img"></div>
                         </a>
 
-                        <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector--{{variant_id}}">
+                        <input aria-label="Quantity" type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector--{{variant_id}}">
 
                         <a id="jc-quantity-btn-up--{{variant_id}}" href="#" class="jc-quantity-btn qty-btn-product-up">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="Increase Quantity" class="qty-btn-img"></div>
                         </a>
 
                       </div>
@@ -357,11 +357,11 @@
                     <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
                       <div class="jc-product-quantity-wrapper">
                         <a id="jc-quantity-btn-down--{{variant_id}}" href="#" class="jc-quantity-btn">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/minus.svg" loading="lazy" alt="Decrease quantity" class="qty-btn-img"></div>
                         </a>
-                        <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector--{{variant_id}}">
+                        <input aria-label="Quantity" type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector--{{variant_id}}">
                         <a id="jc-quantity-btn-up--{{variant_id}}" href="#" class="jc-quantity-btn">
-                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="" class="qty-btn-img"></div>
+                          <div class="qty-btn"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/plus.svg" loading="lazy" alt="Increase Quantity" class="qty-btn-img"></div>
                     
                         </a>
                       </div>

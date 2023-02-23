@@ -1,11 +1,9 @@
 <div class="home-hero-section">
     <div class="home-hero-back"
-
-      {% comment %}
+      
       {%if section.settings.hero_image%}   
       style="background-image: url('{{section.settings.hero_image | image_url }}');"
-      {%endif%}
-      {%endcomment%}
+      {% endif %}
   >
 
 
@@ -45,7 +43,7 @@
     
     
     <div class="hero-img-cover"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/splash-home-hero.svg" loading="lazy" alt="" class="img-hero"></div>
-    <div class="shopping-for-gift-section">
+    <div class="shopping-for-gift-section"></div>
 
 
 
@@ -95,30 +93,29 @@
       
                       <div class="product-section-col">
                         <div class="product-section-col-inner product-section-col-inner-category">
-
-
-
-                          <div>
-                            <div class="product-section-img-wrapper"><a href="{{product.url}}" class="product-section-img-link w-inline-block"><img src="{{ product.featured_image | img_url: '800x' }}" alt="{{product.title}}" class="product-section-img"></a></div>
+                            <div class="product-section-img-wrapper">
+                                <a href="{{ product.url }}" class="product-section-img-link w-inline-block">
+                                  <img src="{{ product.featured_image | img_url: '800x' }}" class="product-section-img" alt="{{ product.title | escape }}">
+                                </a>
+                              </div>
                             <div id="w-node-_2c453dd0-c9ca-8595-de3c-3a5b7b5c5cc5-dd266cfc" class="shop-name-inner">
                               <h2 class="black-text no-margin-b no-margin-t">
-                                <a href="{{ product.url }}" class="black-bright-blue-link">{{product.title}}</a><span class="break-line"></span>
+                                <a href="{{ product.url }}" class="black-bright-blue-link">{{ product.title }}</a><span class="break-line"></span>
                               </h2>
         
-                              {%comment%}
+                              {% comment %}
                               {% if product.metafields.product_info.collection_description %}
                                 <p class="black-text white smaller">{{ product.metafields.product_info.collection_description }}</p>
                               {% endif %}
-                              {%endcomment%}
-                                
-                            </div>
+                              {% endcomment %}
+                      
 
-                            <p class="black-text center">{{product.price | money }}</p>
+                            <p class="black-text center">{{ product.price | money }}</p>
                           </div>
 
                           
                           <div class="product-section-btn-wrapper">
-                            <a href="{{product.url}}" class="general-btn dark-with-w-text margin-t-larger w-button">Shop Now</a>
+                            <a href="{{ product.url}}" class="general-btn dark-with-w-text margin-t-larger w-button">Shop Now<span class="visually-hidden"> {{ product.title }}</span></a>
                           </div>
                         </div>
                       </div>
@@ -135,11 +132,7 @@
                       {% endif %}
       
                 {% endfor %}
-      
-                
-      
-                    
-      
+
               </div>
       
               <div class="product-slider-arrow-category-page {{jc_hide_class}} w-slider-arrow-left">
@@ -161,7 +154,7 @@
 
        
 
-      {%comment%}
+      {% comment %}
       <div class="shopping-for-gift-wrapper">
         <h1>shopping for a gift?</h1>
         <p>If you’re not sure where to begin, these questions just might help</p>
@@ -178,21 +171,16 @@
           </div>
         </div>
       </div>
-      {%endcomment%}
+      {% endcomment %}
      
       
 
 
-{%comment%}
+    {% comment %}
       <div class="left-img-shopping-gift"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-popcorn1-min.png" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-popcorn1-min-p-500.png 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-popcorn1-min-p-800.png 800w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-popcorn1-min-p-1080.png 1080w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-popcorn1-min.png 1200w" sizes="100vw" alt="Transparent view of pieces of popcorn with white and milk chocolate drizzle in a line going on the popcorn and some not on the popcorn"></div>
       <div class="right-img-shopping-gift"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-pretz1-min.png" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-pretz1-min-p-500.png 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-pretz1-min-p-800.png 800w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-pretz1-min-p-1080.png 1080w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/drizzle-pretz1-min.png 1200w" sizes="100vw" alt="Pretzel with white chocolate drizzle extending out from the pretzel, going on the pretzel, and chocolate drizzle on the pretzel."></div>
-      {%endcomment%}
+    {% endcomment %}
     </div>
-
-
-
-
-
 
   </div>
 
@@ -200,8 +188,6 @@
     <div class="general-white-front margin-t">
       <div class="general-content-wrapper wider no-padding-b">
         <h1 class="black-text smaller-heading">DID YOU KNOW WE CAN DELIVER ALL YOUR GIFTS FOR YOU?</h1>
-        {%comment%}
-        {%endcomment%}
         <h5 class="bright-blue-text">Need help with multi-ship? Instructions <a class="blue-link" href="https://funkychunky.com/pages/multi-ship"> HERE</a></h5>
       </div>
       <div class="flex-gift-row">
@@ -210,14 +196,14 @@
           <h2 class="black-text">JUST HAVE A FEW GIFTS TO SEND?</h2>
           <p class="black-text margin-b tighter-alt">Click the multiple address box at checkout.</p>
           <p class="black-text margin-b tighter-alt">(Less than 20)</p>
-          <a href="https://funkychunky.com/pages/shop-all" class="general-btn dark-with-w-text w-button">Shop Here</a>
+          <a href="https://funkychunky.com/pages/shop-all" class="general-btn dark-with-w-text w-button">Shop All Products</a>
         </div>
         <div class="ways-to-gift-flex-col">
           <div class="gift-img-wrapper"><img src="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/fc-gift-box.png" loading="lazy" srcset="https://cdn.shopify.com/s/files/1/0007/4524/2681/files/fc-gift-box-p-500.png 500w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/fc-gift-box-p-800.png 800w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/fc-gift-box-p-1080.png 1080w, https://cdn.shopify.com/s/files/1/0007/4524/2681/files/fc-gift-box.png 1200w" sizes="(max-width: 479px) 81vw, (max-width: 767px) 200px, (max-width: 991px) 41vw, 220px" alt="" class="gift-img"></div>
           <h2 class="black-text">HAVE A LARGER LIST TO SEND?</h2>
           <p class="black-text margin-b tighter-alt">Upload your addresses at checkout.</p>
           <p class="black-text margin-b tighter-alt">(More than 20)</p>
-          <a href="https://funkychunkygifts.com/" class="general-btn dark-with-w-text w-button">Shop Here</a>
+          <a href="https://funkychunkygifts.com/" class="general-btn dark-with-w-text w-button">Shop Funky Chunky Gifts</a>
         </div>
       </div>
       <div class="bottom-banner-alt">
@@ -226,10 +212,6 @@
       </div>
     </div>
   </div>
-
-
-
-
 
   {% schema %}
   {
@@ -268,7 +250,6 @@
       {
           "type": "url",
           "id": "btn_url",
-          
           "label": "Button URL"
       },
       {

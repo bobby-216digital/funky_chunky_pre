@@ -159,10 +159,26 @@
 {% render 'limoniapps-discountninja-header' %}{%- if product -%}{%- assign discountninjaproduct = product -%}{%- endif -%}{%- if collection -%}{%- assign discountninjacollection = collection -%}{%- endif -%}
 
  {% render 'giftship' %} 
+ <style>
+   .sr-only {
+    position: absolute;
+    left: -100000px;
+   }
+   .skip-link {
+     position: absolute;
+     left: -100000px;
+     z-index: 99999999;
+     color: black;
+     background-color: white;
+   }
+   .skip-link:focus-visible {
+     left: 0px;
+   }
+ </style>
 </head>
 
 <body>
-
+  <a href="#MainContent" class="skip-link">Skip to Content</a>
   {% section 'sk-modal' %}
 
   {% section 'sk-search-modal' %}
@@ -268,7 +284,47 @@
     }
   })</script>
 
+<!-- 216 a11y -->
+<script>
+const focusableElements =
+  'button, a, [href], [role="button"], input:not([tabindex="-1"]), select, textarea, [tabindex]:not([tabindex="-1"])';
 
+function trapFocus(selector) {
+    const modal = document.querySelector(selector); // select the modal by it's CSS selector
+    const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+    const focusableContent = modal.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+  console.log(firstFocusableElement, lastFocusableElement, modal)
+    document.addEventListener('keydown', function(e) {
+    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+      if (!isTabPressed) {
+          return;
+      }
+  
+      if (e.shiftKey) { // if shift key pressed for shift + tab combination
+          if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus(); // add focus for the last focusable element
+          e.preventDefault();
+          }
+      } else { // if tab key is pressed
+          if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+          firstFocusableElement.focus(); // add focus for the first focusable element
+          e.preventDefault();
+          }
+      }
+    });
+
+    firstFocusableElement.focus();
+}
+
+  function keyToClick(event) {
+                if (event.key == "Enter") {
+                    event.preventDefault();
+                    event.target.click();
+                }
+            }
+</script>
   
 </body>
 </html>
